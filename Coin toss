@@ -1,0 +1,103 @@
+``-- Coin Toss
+-- First real program by Andy2080
+
+-- Use this function to perform your initial setup
+function setup()
+    
+    displayMode(FULLSCREEN)
+    
+    com1 = {flip1 = math.random(), flip2 = math.random(), flip3 = math.random()} -- Determines the first computer's guess
+    com2 = {flip1 = math.random(), flip2 = math.random(), flip3 = math.random()} -- Determines the second computer's guess
+    com3 = {flip1 = math.random(), flip2 = math.random(), flip3 = math.random()} -- Determines the results of the toss
+    
+    if com1.flip1 < 0.5 then
+        com1.flip1 = "H"
+    elseif com1.flip1 > 0.5 then
+        com1.flip1 = "T"
+    end
+    
+    if com1.flip2 < 0.5 then
+        com1.flip2 = "H"
+    elseif com1.flip2 > 0.5 then
+        com1.flip2 = "T"
+    end
+    
+    if com1.flip3 < 0.5 then
+        com1.flip3 = "H"
+    elseif com1.flip3 > 0.5 then
+        com1.flip3 = "T"
+    end
+    
+    if com2.flip1 < 0.5 then
+        com2.flip1 = "H"
+    elseif com2.flip1 > 0.5 then
+        com2.flip1 = "T"
+    end
+    
+    if com2.flip2 < 0.5 then
+        com2.flip2 = "H"
+    elseif com2.flip2 > 0.5 then
+        com2.flip2 = "T"
+    end
+    
+    if com2.flip3 < 0.5 then
+        com2.flip3 = "H"
+    elseif com2.flip3 > 0.5 then
+        com2.flip3 = "T"
+    end
+    
+    if com3.flip1 < 0.5 then
+        com3.flip1 = "H"
+    elseif com3.flip1 > 0.5 then
+        com3.flip1 = "T"
+    end
+    
+    if com3.flip2 < 0.5 then
+        com3.flip2 = "H"
+    elseif com3.flip2 > 0.5 then
+        com3.flip2 = "T"
+    end
+    
+    if com3.flip3 < 0.5 then
+        com3.flip3 = "H"
+    elseif com3.flip3 > 0.5 then
+        com3.flip3 = "T"
+    end
+end
+
+-- This function gets called once every frame
+function draw()
+    -- This sets a dark background color 
+    background(40, 40, 50)
+    fontSize(30)
+    
+    -- This sets the line thickness
+    strokeWidth(5)
+
+    -- Do your drawing here
+    text("COIN TOSS", WIDTH/2, 900)
+    text("COMPUTER VS COMPUTER", WIDTH/2, 750)
+    
+    text ("H = HEADS T = TAILS", WIDTH/2, 600)
+    
+    text("COM 1'S GUESS:", 300, 500)
+    text(com1.flip1, 290, 390)
+    text(com1.flip2, 310, 390)
+    text(com1.flip3, 330, 390)
+    
+    text("COM 2'S GUESS:", 1000, 500)
+    text(com2.flip1, 990, 390)
+    text(com2.flip2, 1010, 390)
+    text(com2.flip3, 1030, 390)
+    
+    text("RESULTS:", WIDTH/2, 300)
+    text(com3.flip1, 660, 200)
+    text(com3.flip2, 680, 200)
+    text(com3.flip3, 700, 200)
+    
+    if com3.flip1==com1.flip1 and com3.flip2==com1.flip2 and com3.flip3==com1.flip3 then
+        sprite("UI:Green Check", 350, 390)
+    elseif com3.flip1==com2.flip1 and com3.flip2==com2.flip2 and com3.flip3==com2.flip3 then
+        sprite("UI:Green Check", 1050, 390)
+    end
+end
