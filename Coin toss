@@ -98,4 +98,7 @@ function draw()
     
     if com3.flip1==com1.flip1 and com3.flip2==com1.flip2 and com3.flip3==com1.flip3 then
         sprite("UI:Green Check", 350, 390)
-    elseif com3.flip1==c
+    elseif com3.flip1==com2.flip1 and com3.flip2==com2.flip2 and com3.flip3==com2.flip3 then
+        sprite("UI:Green Check", 1050, 390)
+    end
+end
