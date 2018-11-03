@@ -1,10 +1,11 @@
-``-- Coin Toss
+-- Coin Toss
 -- First real program by Andy2080
 
 -- Use this function to perform your initial setup
 function setup()
     
     displayMode(FULLSCREEN)
+    supportedOrientations(LANDSCAPE_ANY)
     
     com1 = {flip1 = math.random(), flip2 = math.random(), flip3 = math.random()} -- Determines the first computer's guess
     com2 = {flip1 = math.random(), flip2 = math.random(), flip3 = math.random()} -- Determines the second computer's guess
@@ -97,7 +98,4 @@ function draw()
     
     if com3.flip1==com1.flip1 and com3.flip2==com1.flip2 and com3.flip3==com1.flip3 then
         sprite("UI:Green Check", 350, 390)
-    elseif com3.flip1==com2.flip1 and com3.flip2==com2.flip2 and com3.flip3==com2.flip3 then
-        sprite("UI:Green Check", 1050, 390)
-    end
-end
+    elseif com3.flip1==c
